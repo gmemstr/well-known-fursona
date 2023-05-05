@@ -21,7 +21,7 @@ tasks:
       export CI_BRANCH=$(git rev-parse --abbrev-ref HEAD)
       # If trunk branch, use --prod, otherwise just deploy
       if [ "$CI_BRANCH" = "trunk" ]; then
-        vercel --prod
+        vercel deploy --prod
       else
-        vercel
+        vercel deploy
       fi
