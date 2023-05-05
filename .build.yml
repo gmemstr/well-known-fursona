@@ -16,7 +16,7 @@ tasks:
       mkdir -p .vercel
       mv ~/.vercel-well-known-fursona .vercel/project.json
       # Install vercel cli
-      npm i -g vercel
+      sudo npm i -g vercel
       # Get current git branch
       export CI_BRANCH=$(git rev-parse --abbrev-ref HEAD)
       # If trunk branch, use --prod, otherwise just deploy
