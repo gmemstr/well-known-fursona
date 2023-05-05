@@ -22,9 +22,8 @@ tasks:
       # Get current git branch
 
       echo "Deploying to Vercel"
-      export CI_BRANCH=$(git rev-parse --abbrev-ref HEAD)
       # If trunk branch, use --prod, otherwise just deploy
-      if [ "$CI_BRANCH" = "trunk" ]; then
+      if [ "$(git rev-parse origin/trunk)" != "$(git rev-parse HEAD)" ]; then
         echo "Deploying to production"
         vercel deploy --prod --token $VERCEL_API_TOKEN
       else
