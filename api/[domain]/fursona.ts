@@ -18,6 +18,7 @@ async function fetcher(url: string) {
 	}
 }
 
+
 export default async (request: Request) => {
 	// Proxy the request to the `req.url` value and return it as a JSON string.
 	const params = new URL(request.url).searchParams;
@@ -28,7 +29,7 @@ export default async (request: Request) => {
 	}
 	return new Response(JSON.stringify(data), {
 		headers: {
-			'content-type': 'application/json'
+			'content-type': 'application/json',
 			'cache-control': 'public, max-age=300, must-revalidate',
 		}
 	});

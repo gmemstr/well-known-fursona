@@ -16,7 +16,13 @@
 	// Request well-known/fursona file
 	function requestFursona() {
 		fetch(`/api/${$page.params.domain}/fursona`)
-			.then((res) => res.json())
+			.then((res) => {
+	 			if (res.ok) {
+					return res.json();
+				} else {
+					throw new Error(res.statusText);
+				}
+			})
 			.then((data) => {
 				// Cast data to FursonaSchema
 				const sonas_data = data as FursonaSchema;
@@ -42,7 +48,7 @@
 	{:else}
 		<div class="m-4 max-w-md flex flex-col items-center justify-center">
 			<div class="w-full max-w-sm p-4 dark:bg-slate-500 bg-white rounded-md shadow-md">
-				<p class="mb-3 text-center">Loading...</p>
+				<p class="mb-3 text-center text-slate-900 dark:text-white">Loading...</p>
 			</div>
 		</div>
 	{/if}
