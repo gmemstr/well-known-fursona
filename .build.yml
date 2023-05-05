@@ -24,7 +24,7 @@ tasks:
       echo "Deploying to Vercel"
       git fetch origin trunk
       # If trunk branch, use --prod, otherwise just deploy
-      if [ "$(git rev-parse origin/trunk)" != "$(git rev-parse HEAD)" ]; then
+      if [ "$(git rev-parse origin/trunk)" = "$(git rev-parse HEAD)" ]; then
         echo "Deploying to production"
         vercel deploy --prod --token $VERCEL_API_TOKEN
       else
