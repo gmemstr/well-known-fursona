@@ -32,7 +32,7 @@ export default async (request: NextRequest) => {
   return new Response(JSON.stringify(data), {
 	headers: {
 	  'content-type': 'application/json',
-	  'cache-control': 'public, max-age=600, stale-while-revalidate=1200',
+	//  'cache-control': 'public, max-age=600, stale-while-revalidate=1200',
 	},
   });
 };
