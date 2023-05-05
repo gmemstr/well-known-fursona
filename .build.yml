@@ -1,0 +1,25 @@
+image: nixos/unstable
+secrets:
+  - a2e02b24-b89f-4d60-8319-c6883b567430
+  - 50b9ba48-c450-43df-a46d-01e2cf0ef9c1
+packages:
+  - nixos.nodejs
+  - nixos.nodePackages_latest.vercel
+sources:
+  - git@git.sr.ht:~gmem/well-known-fursona
+tasks:
+  - vercel-deploy: |
+      set +x
+      export VERCEL_API_TOKEN=$(cat ~/.vercel)
+      set -x
+      cd well-known-fursona
+      mkdir -p .vercel
+      mv ~/.vercel-well-known-fursona ~/.vercel/project.json
+      # Get current git branch
+      export CI_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+      # If trunk branch, use --prod, otherwise just deploy
+      if [ "$CI_BRANCH" = "trunk" ]; then
+        vercel --prod
+      else
+        vercel
+      fi
