@@ -13,7 +13,7 @@ tasks:
       set -x
       cd well-known-fursona
       mkdir -p .vercel
-      mv ~/.vercel-well-known-fursona ~/.vercel/project.json
+      mv ~/.vercel-well-known-fursona .vercel/project.json
       # Install vercel cli
       npm i -g vercel
       # Get current git branch
