@@ -4,6 +4,7 @@ secrets:
   - 50b9ba48-c450-43df-a46d-01e2cf0ef9c1
 packages:
   - nodejs
+  - npm
 sources:
   - git@git.sr.ht:~gmem/well-known-fursona
 tasks:
