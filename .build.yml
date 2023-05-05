@@ -3,7 +3,6 @@ secrets:
   - a2e02b24-b89f-4d60-8319-c6883b567430
   - 50b9ba48-c450-43df-a46d-01e2cf0ef9c1
 packages:
-  - nixos.nodejs
   - nixos.nodePackages_latest.vercel
 sources:
   - git@git.sr.ht:~gmem/well-known-fursona
