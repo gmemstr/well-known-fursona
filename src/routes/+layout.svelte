@@ -17,3 +17,14 @@
 <div class="bg-white dark:bg-slate-800">
 	<slot />
 </div>
+
+<style lang="postcss">
+	:global(html) {
+		background-color: white;
+	}
+	@media (prefers-color-scheme: dark) {
+		:global(html) {
+			background-color: theme(colors.slate.800);
+		}
+	}
+</style>
