@@ -30,7 +30,7 @@
 	}
 </script>
 
-<div class="flex flex-row flex-wrap items-center justify-center h-screen">
+<div class="flex flex-row flex-wrap items-center justify-center">
 	{#if fursonas.sonas}
 		{#each fursonas.sonas as sona}
 			<div class="m-4 max-w-md flex flex-col items-center justify-center">
