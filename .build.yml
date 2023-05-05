@@ -1,6 +1,6 @@
 image: alpine/edge
 secrets:
-  - a2e02b24-b89f-4d60-8319-c6883b567430
+  - ea81f650-6b7e-4cbb-862b-b39195858bfd
   - 50b9ba48-c450-43df-a46d-01e2cf0ef9c1
 packages:
   - nodejs
