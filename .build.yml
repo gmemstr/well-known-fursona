@@ -11,17 +11,23 @@ tasks:
   - vercel-deploy: |
       set +x
       export VERCEL_API_TOKEN=$(cat ~/.vercel)
-      set -x
+      echo "Creating Vercel project"
       cd well-known-fursona
       mkdir -p .vercel
       mv ~/.vercel-well-known-fursona .vercel/project.json
+
+      echo "Installing Vercel CLI"
       # Install vercel cli
       sudo npm i -g vercel
       # Get current git branch
+
+      echo "Deploying to Vercel"
       export CI_BRANCH=$(git rev-parse --abbrev-ref HEAD)
       # If trunk branch, use --prod, otherwise just deploy
       if [ "$CI_BRANCH" = "trunk" ]; then
+        echo "Deploying to production"
         vercel deploy --prod --token $VERCEL_API_TOKEN
       else
+        echo "Deploying to preview"
         vercel deploy --token $VERCEL_API_TOKEN
       fi
