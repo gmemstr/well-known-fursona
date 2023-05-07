@@ -1,38 +1,20 @@
-# create-svelte
+# well-known-fursona
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+[fursona.gmem.ca](https://fursona.gmem.ca)
 
-## Creating a project
+[blog post](https://blog.gabrielsimmer.com/posts/well-known-fursona/)
 
-If you're seeing this, you've probably already done this step. Congrats!
+small sveltekit+tailwind application for loading and displaying a [fursona schema](https://github.com/theHedgehog0/fursona-schema)
+from .well-known/fursona.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+deployed to vercel to use their edge functions
 
-# create a new project in my-app
-npm create svelte@latest my-app
+## local development
+
+local development uses the vercel cli to ensure the function can be reached locally.
+
+```shell
+$ npm i
+$ npm run dev-vercel
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
