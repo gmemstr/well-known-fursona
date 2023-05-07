@@ -9,7 +9,7 @@ packages:
 sources:
   - git@git.sr.ht:~gmem/well-known-fursona
 environment:
-  GITHUB_REPO: "gmemstr/osc-triggers"
+  GITHUB_REPO: "gmemstr/well-known-fursona"
 tasks:
   - vercel-deploy: |
       set +x
