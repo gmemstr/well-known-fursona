@@ -2,11 +2,14 @@ image: alpine/edge
 secrets:
   - ea81f650-6b7e-4cbb-862b-b39195858bfd
   - 50b9ba48-c450-43df-a46d-01e2cf0ef9c1
+  - 921891a4-e0a9-4753-9275-b010d2e2520a
 packages:
   - nodejs
   - npm
 sources:
   - git@git.sr.ht:~gmem/well-known-fursona
+environment:
+  GITHUB_REPO: "gmemstr/osc-triggers"
 tasks:
   - vercel-deploy: |
       set +x
@@ -31,3 +34,8 @@ tasks:
         echo "Deploying to preview"
         vercel deploy --token $VERCEL_API_TOKEN
       fi
+  - mirror-to-github: |
+      cd well-known-fursona
+      git remote add github git@github.com:$GITHUB_REPO.git
+      ssh-keyscan github.com >> ~/.ssh/known_hosts
+      git push --mirror github
