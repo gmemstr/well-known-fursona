@@ -31,7 +31,7 @@
 			.catch((err) => {
 				// Set p content to error
 				const p = document.querySelector('p');
-				p.innerHTML = `Error: Fursona resource (<code>https://${$page.params.domain}/.well-known/fursona</code>) not found <br /><code>${err}</code>`;
+				p.innerHTML = `Error: Fursona resource (<code>https://${$page.params.domain}/.well-known/fursona</code> or <code>https://${$page.params.domain}/.well-known/fursona.json</code>) not found <br /><code>${err}</code>`;
 			});
 	}
 </script>
