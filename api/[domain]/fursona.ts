@@ -4,10 +4,13 @@ export const config = {
 
 async function fetcher(url: string) {
 	console.log(`https://${url}/.well-known/fursona`);
-	const res = await fetch(`https://${url}/.well-known/fursona`);
+	let res = await fetch(`https://${url}/.well-known/fursona`);
 	// If 404, return null
 	if (res.status === 404) {
-		return null;
+		res = await fetch(`https://${url}/.well-known/fursona.json`);
+		if (res.status === 404) {
+			return null
+		}
 	}
 	// Try to parse json, if not return null
 	try {
