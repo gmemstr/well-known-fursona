@@ -76,7 +76,15 @@
 		{/if}
 	</div>
 	{#if fursona.ref}
-		<button popovertarget="popover-refsheet-{fursona.name}" class="mb-4 mt-4 text-md text-blue-500 dark:text-blue-200 underline cursor-pointer">View Ref Sheet</button>
+		<h2 class="mb-2 text-2xl leading-none md:text-2xl lg:text-2xl">Ref Sheet</h2>
+		<button popovertarget="popover-refsheet-{fursona.name}" class="cursor-pointer">
+			<figure class="table mx-auto">
+				<img src={fursona.ref} alt="{fursona.refAlt}" class="h-auto max-w-full rounded-base" /><br />
+				<figcaption class="table-caption caption-bottom">
+					<h3 class="text-center wrap-break-word text-md text-blue-500 dark:text-blue-200 underline">View Ref Sheet</h3>
+				</figcaption>
+			</figure>
+		</button>
 		<div
 			id="popover-refsheet-{fursona.name}"
 			class="fixed inset-0 m-auto w-fit h-fit max-h-[90dvh] max-w-[90dvw] p-4 bg-white dark:bg-slate-500 dark:text-white border rounded-lg shadow-xl overflow-auto border-blue-gray-50 text-blue-gray-500 shadow-blue-gray-500/10 backdrop:bg-black/50 backdrop:backdrop-blur-sm focus:outline-none"
